@@ -15,7 +15,7 @@ public class GreetingResourceTest {
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is("Привет! Privet from version 1.0.6!"));
+             .body(is("Aloha from version 1.0.6!"));
     }
 
 
