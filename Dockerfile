@@ -83,10 +83,10 @@ ENV LANGUAGE='en_US:en'
 
 
 # We make four distinct layers so if there are application changes the library layers can be re-used
-COPY --chown=185 target/lib/ /deployments/lib/
+#COPY --chown=185 target/lib/ /deployments/lib/
 COPY --chown=185 target/*.jar /deployments/
 COPY --chown=185 target/ /deployments/app/
-COPY --chown=185 target/quarkus/ /deployments/quarkus/
+#COPY --chown=185 target/quarkus/ /deployments/quarkus/
 
 EXPOSE 8080
 USER 185
