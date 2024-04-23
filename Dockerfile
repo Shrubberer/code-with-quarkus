@@ -77,6 +77,20 @@
 #   accessed directly. (example: "foo.example.com,bar.example.com")
 #
 ###
+
+# Use a Maven image as the builder stage
+FROM maven:3.8.4-openjdk-11-slim AS builder
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the Maven project files
+COPY pom.xml .
+COPY src ./src
+
+# Build the project
+RUN mvn package
+
 FROM registry.access.redhat.com/ubi8/openjdk-11:1.18
 
 ENV LANGUAGE='en_US:en'
