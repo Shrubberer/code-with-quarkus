@@ -99,8 +99,8 @@ RUN ls
 RUN pwd
 # We make four distinct layers so if there are application changes the library layers can be re-used
 #COPY --chown=185 target/lib/ /deployments/lib/
-COPY --chown=185 target/*.jar /deployments/
-COPY --chown=185 target/ /deployments/app/
+COPY --from=builder --chown=185 target/*.jar /deployments/
+COPY --from=builder --chown=185 target/ /deployments/app/
 #COPY --chown=185 target/quarkus/ /deployments/quarkus/
 
 EXPOSE 8080
