@@ -1,0 +1,10 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  annotations:
+  name: cbc-quarkus
+  labels:
+    build: cbc-quarkus
+spec:
+  lookupPolicy:
+    local: false
