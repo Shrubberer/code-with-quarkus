@@ -77,7 +77,7 @@
 #   accessed directly. (example: "foo.example.com,bar.example.com")
 #
 ###
-
+ENV LANGUAGE='en_US:en'
 # Use a Maven image as the builder stage
 FROM maven:3.8.4-openjdk-11-slim AS builder
 
@@ -93,7 +93,7 @@ RUN mvn package
 
 FROM registry.access.redhat.com/ubi8/openjdk-11:1.18
 
-ENV LANGUAGE='en_US:en'
+
 
 RUN ls
 RUN pwd
