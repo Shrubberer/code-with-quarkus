@@ -107,6 +107,6 @@ EXPOSE 8080
 USER 185
 ENV AB_JOLOKIA_OFF=""
 ENV JAVA_OPTS_APPEND="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager"
-ENV JAVA_APP_JAR="/deployments/code-with-quarkus-1.0.4-SNAPSHOT-runner.jar"
+ENV JAVA_APP_JAR="/deployments/code-with-quarkus-SNAPSHOT-runner.jar"
 
 ENTRYPOINT [ "/opt/jboss/container/java/run/run-java.sh" ]
