@@ -15,7 +15,10 @@ RUN mvn package
 
 FROM registry.access.redhat.com/ubi8/openjdk-11:1.18
 
-# This is another comment in dev
+
+=======
+# Test comment to check trigger
+
 # We make four distinct layers so if there are application changes the library layers can be re-used
 #COPY --chown=185 target/lib/ /deployments/lib/
 COPY --from=builder --chown=185 target/*.jar /deployments/
