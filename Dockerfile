@@ -93,10 +93,6 @@ RUN mvn package
 
 FROM registry.access.redhat.com/ubi8/openjdk-11:1.18
 
-
-
-RUN ls
-RUN pwd
 # We make four distinct layers so if there are application changes the library layers can be re-used
 #COPY --chown=185 target/lib/ /deployments/lib/
 COPY --from=builder --chown=185 target/*.jar /deployments/
