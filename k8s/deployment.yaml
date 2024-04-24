@@ -40,7 +40,7 @@ spec:
             successThreshold: 1
             failureThreshold: 3
           terminationMessagePath: /dev/termination-log
-          name: cbc-quarkus6
+          name: code-with-quarkus
           livenessProbe:
             httpGet:
               path: /q/health/live
