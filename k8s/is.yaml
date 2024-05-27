@@ -2,7 +2,7 @@ kind: ImageStream
 apiVersion: image.openshift.io/v1
 metadata:
   annotations:
-  name: code-with-quarkus
+  name: test
   labels:
     build: code-with-quarkus
 spec:
