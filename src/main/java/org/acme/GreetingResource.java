@@ -11,19 +11,22 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
-
+mport org.eclipse.microprofile.config.inject.ConfigProperty;
 
 
 @Path("/hello")
 public class GreetingResource {
 
     private static final Logger LOG = Logger.getLogger(GreetingResource.class);
-
+    
+    @ConfigProperty(name = "sample.env.var") 
+    String sampleEvnVar;
+    
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        LOG.info("Aloha from version 1.0.6!");
-        return "Aloha from version 1.0.6!";
+        LOG.info("Aloha from version 1.0.6!"); 
+        return "Aloha from version 1.0.6!" + sampleEvnVar;
         
     }
     
