@@ -25,8 +25,8 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        LOG.info("Aloha from version 1.0.6!"); 
-        return "Aloha from version 1.0.6!" + sampleEvnVar;
+        LOG.info("Aloha from version 1.0.8!"); 
+        return "Aloha from version 1.0.8!" + sampleEvnVar;
         
     }
     
