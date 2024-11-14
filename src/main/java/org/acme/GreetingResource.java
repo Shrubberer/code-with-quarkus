@@ -11,7 +11,7 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
-mport org.eclipse.microprofile.config.inject.ConfigProperty;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 
 @Path("/hello")
@@ -25,8 +25,8 @@ public class GreetingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        LOG.info("Aloha from version 1.0.7!"); 
-        return "Aloha from version 1.0.7!" + sampleEvnVar;
+        LOG.info("Aloha from version 1.0.6!"); 
+        return "Aloha from version 1.0.6!" + sampleEvnVar;
         
     }
     
