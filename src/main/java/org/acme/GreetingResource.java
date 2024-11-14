@@ -26,7 +26,7 @@ public class GreetingResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         LOG.info("Aloha from version 1.0.7!"); 
-        return "Aloha from version 1.0.7!" + sampleEvnVar;
+        return "Aloha from version 1.0.7!";
         
     }
     
