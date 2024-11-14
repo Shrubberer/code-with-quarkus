@@ -11,13 +11,13 @@ spec:
   selector:
     matchLabels:
       app: code-with-quarkus
-      version: '6'
+      version: '8'
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: code-with-quarkus
-        version: '6'
+        version: '8'
       annotations:
         sidecar.istio.io/inject: 'false'
     spec:
