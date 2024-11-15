@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   annotations:
-    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"test:v7"},"fieldPath":"spec.template.spec.containers[?(@.name==\"code-with-quarkus\")].image"}]'
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"code-with-quarkus:v7"},"fieldPath":"spec.template.spec.containers[?(@.name==\"code-with-quarkus\")].image"}]'
   name: code-with-quarkus7
   labels:
     app: code-with-quarkus
