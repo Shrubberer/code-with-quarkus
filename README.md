@@ -1,3 +1,12 @@
+# This example is based on Quarkus hello world
+Three different versions exist in separate branches
+They can be deployed with the Tekton pipelines example found here: 
+https://github.com/Shrubberer/code-with-quarkus-gitops.git
+
+These versions can be used with Istio Service Mesh 
+
+
+
 Hello world example
 
 
