@@ -8,8 +8,7 @@ import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 public class GreetingResourceTest {
-    @ConfigProperty(name = "sample.env.var")
-    String sampleEnvVar;
+String expectedResponse = System.getenv("SAMPLE_ENV_VAR");
 
     @Test
     public void testHelloEndpoint() {
@@ -17,7 +16,7 @@ public class GreetingResourceTest {
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is(sampleEnvVar));
+             .body(is(expectedResponse));
     }
 
 
