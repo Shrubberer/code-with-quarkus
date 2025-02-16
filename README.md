@@ -1,4 +1,5 @@
-# This example is based on Quarkus hello world
+# Quarkus hello world for Istio demo 
+
 Health endpoints have been added 
 Also three different versions exist in separate branches.
 They can be deployed with the Tekton pipelines example found here: 
