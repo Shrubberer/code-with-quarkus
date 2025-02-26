@@ -13,6 +13,9 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
+import javax.ws.rs.QueryParam;
+
+
 
 @Path("/hello")
 public class GreetingResource {
@@ -24,7 +27,16 @@ public class GreetingResource {
     
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
+    public String hello(@QueryParam("delay") Long delay) {
+        if (delay != null && delay > 0) {
+            try {
+                Thread.sleep(delay);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return "Error: Interrupted during sleep";
+            }
+        } 
+        
         LOG.info(sampleEvnVar); 
         return sampleEvnVar;
         
