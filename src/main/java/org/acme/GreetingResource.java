@@ -13,7 +13,9 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
+
 import javax.ws.rs.QueryParam;
+
 
 
 
@@ -27,6 +29,7 @@ public class GreetingResource {
     
     @GET
     @Produces(MediaType.TEXT_PLAIN)
+
     public String hello(@QueryParam("delay") Long delay) {
         if (delay != null && delay > 0) {
             try {
@@ -37,6 +40,7 @@ public class GreetingResource {
             }
         } 
         
+
         LOG.info(sampleEvnVar); 
         return sampleEvnVar;
         
