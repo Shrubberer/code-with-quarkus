@@ -6,6 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 import org.jboss.logging.Logger;
+import javax.ws.rs.core.Response;
 
 import org.jboss.resteasy.client.jaxrs.ResteasyClient; 
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
@@ -49,6 +50,17 @@ public class GreetingResource {
       return "pong";
     }
 
+
+    @GET
+    @Path("/error")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response error() {
+        LOG.error("Simulating a 503 error for testing purposes");
+        return Response.status(Response.Status.SERVICE_UNAVAILABLE) // HTTP 503
+                      .entity("Simulated 503 error for testing")
+                      .build();
+    }
+    
     @Path("/send")
     @GET
     @Produces(MediaType.TEXT_PLAIN)
