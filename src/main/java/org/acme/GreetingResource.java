@@ -28,18 +28,29 @@ public class GreetingResource {
     
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello(@QueryParam("delay") Long delay) {
+    public Response hello(@QueryParam("delay") Long delay,  @QueryParam("error") String error) {
+
+        // Handle error parameter - return 503 if present
+        if (error != null) {
+            return Response.status(Response.Status.SERVICE_UNAVAILABLE)
+                          .entity("Service unavailable - intentional error")
+                          .build();
+        }
+
         if (delay != null && delay > 0) {
             try {
                 Thread.sleep(delay);
+                
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
-                return "Error: Interrupted during sleep";
+                return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                .entity("Error: Interrupted during sleep")
+                .build();
             }
         } 
         
         LOG.info(sampleEvnVar); 
-        return sampleEvnVar;
+        return Response.ok(sampleEvnVar).build();
         
     }
     
