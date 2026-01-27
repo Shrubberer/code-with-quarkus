@@ -1,7 +1,7 @@
 
+FROM maven:3.8.4-openjdk-11-slim AS builder
 ENV LANGUAGE='en_US:en'
 # Use a Maven image as the builder stage
-FROM maven:3.8.4-openjdk-11-slim AS builder
 
 # Set the working directory
 WORKDIR .
